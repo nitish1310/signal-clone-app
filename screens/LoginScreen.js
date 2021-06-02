@@ -22,7 +22,11 @@ const LoginScreen = ({ navigation }) => {
     return unsubscribe;
   }, []);
 
-  const signIn = () => {};
+  const signIn = () => {
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .catch((error) => alert(error));
+  };
 
   return (
     // behavior="padding"
@@ -48,6 +52,7 @@ const LoginScreen = ({ navigation }) => {
           type="password"
           value={password}
           onChangeText={(text) => setPassword(text)}
+          onSubmitEditing={signIn}
         />
       </View>
 
