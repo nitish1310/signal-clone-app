@@ -3,6 +3,7 @@ import { StatusBar } from "expo-status-bar";
 import { KeyboardAvoidingView } from "react-native";
 import { StyleSheet, View } from "react-native";
 import { Button, Input, Image, Text } from "react-native-elements";
+import { auth } from "../firebase";
 
 const RegisterScreen = ({ navigation }) => {
   const [name, setName] = useState("");
@@ -16,7 +17,19 @@ const RegisterScreen = ({ navigation }) => {
     });
   }, [navigation]);
 
-  const register = () => {};
+  const register = () => {
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((authUser) => {
+        authUser.user.update({
+          displayName: name,
+          photoURL:
+            imageUrl ||
+            "https://cencup.com/wp-content/upload/2019/07/avatar-placeholder.png",
+        });
+      })
+      .catch((error) => alert(error.message));
+  };
 
   return (
     <KeyboardAvoidingView style={styles.container}>

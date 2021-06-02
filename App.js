@@ -6,6 +6,7 @@ import { NavigationContainer, StackActions } from "@react-navigation/native";
 import LoginScreen from "./screens/LoginScreen";
 import { createStackNavigator } from "@react-navigation/stack";
 import RegisterScreen from "./screens/RegisterScreen";
+import HomeScreen from "./screens/HomeScreen";
 
 const Stack = createStackNavigator();
 
@@ -21,10 +22,7 @@ export default function App() {
       <Stack.Navigator screenOptions={globalScreenOptions}>
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Register" component={RegisterScreen} />
-        {/* <View style={styles.container}>
-        <Text>LETS BUILD SIGNAL</Text>
-        <StatusBar style="auto" />
-      </View> */}
+        <Stack.Screen name="Home" component={HomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
