@@ -35,7 +35,9 @@ const ChatScreen = ({ navigation, route }) => {
           <Avatar
             rounded
             source={{
-              uri: "https://lh3.googleusercontent.com/proxy/UrxEaxy4aPfce2hxQZMQyOPKILHWwxn0fUvUUUfjUTQumb6RwX9_VFKs8y8Pqhvh74UXHQHIT77xFYx9shKNLyVCMm9qGJaa3N_qAgW7PagxdHGZ5xm6wQ",
+              uri:
+                messages[0]?.data.photoURL ||
+                "https://lh3.googleusercontent.com/proxy/UrxEaxy4aPfce2hxQZMQyOPKILHWwxn0fUvUUUfjUTQumb6RwX9_VFKs8y8Pqhvh74UXHQHIT77xFYx9shKNLyVCMm9qGJaa3N_qAgW7PagxdHGZ5xm6wQ",
             }}
           />
           <Text
@@ -75,7 +77,7 @@ const ChatScreen = ({ navigation, route }) => {
         </View>
       ),
     });
-  }, [navigation]);
+  }, [navigation, messages]);
 
   const sendMessage = () => {
     Keyboard.dismiss();
@@ -205,6 +207,7 @@ const styles = StyleSheet.create({
     alignSelf: "flex-start",
     borderRadius: 20,
     marginRight: 15,
+    marginBottom: 20,
     maxWidth: "80%",
     position: "relative",
   },
