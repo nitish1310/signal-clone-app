@@ -13,3 +13,7 @@ web-build/
 .DS_Store
 package-lock.json
 firebase.js
+note.txt
+.firebaserc
+firebase.json
+.firebase/hosting.d2ViLWJ1aWxk.cache
