@@ -1,10 +1,10 @@
-# signal-clone-app using React Native, Expo and Firebase
+# Signal-clone-app using React Native, Expo and Firebase
 
 ### [Live Site](https://signal-clone-223b4.web.app/)
 
 ### [Live App Expo](https://expo.io/@nitish13/signal-clone-app/)
 
-![Title-image](https://github.com/nitish1310/amazon-clone/blob/master/public/amazon-clone.JPG)
+![Title-image](https://github.com/nitish1310/signal-clone-app/blob/master/assets/images/signal-clone-app-screenshot.PNG)
 
 ## Introduction
 This is a code repository for the Signal Clone App 
